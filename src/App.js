@@ -21,10 +21,9 @@ function App() {
 
   const saveItem = () => {
     axios.post('http://localhost:3535' + '/api/addEnchantedItem', enchantedItem).then(({ data }) => {
-      alert('Saved')
+      window.location.reload(false);
     })
   }
-
 
   return (
     <div className="App">
@@ -68,8 +67,8 @@ function App() {
         <option>Clothing_Accessories</option>
         <option>Clothing_Body</option>
         <option>Clothing_Footwear</option>
-        <option>Food_Prepped Food</option>
         <option>Clothing_Headgear</option>
+        <option>Food_Prepped Food</option>
       </select>
       <Quill type="power" updateProperty={updateProperty} />
       <Quill type="price" updateProperty={updateProperty} />
